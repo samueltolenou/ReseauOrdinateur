@@ -1,18 +1,18 @@
 #include "../header/N_interface.h"
+using namespace std;
 
-
-N_Interface::N_Interface(const std::string& macAddress, const std::string& manufacturer, int maxSpeed)
+N_Interface::N_Interface(const string& macAddress, const string& manufacturer, int maxSpeed)
         : macAddress_(macAddress), manufacturer_(manufacturer), maxSpeed_(maxSpeed), enabled_(true)
 {
     totalInterfaces_++;
 }
 
-std::string N_Interface::getMacAddress() const
+string N_Interface::getMacAddress() const
 {
     return macAddress_;
 }
 
-std::string N_Interface::getManufacturer() const
+string N_Interface::getManufacturer() const
 {
     return manufacturer_;
 }
@@ -27,12 +27,12 @@ bool N_Interface::isEnabled() const
     return enabled_;
 }
 
-std::string N_Interface::getIpAddress() const
+string N_Interface::getIpAddress() const
 {
     return ipAddress_;
 }
 
-std::string N_Interface::getSubnetMask() const
+string N_Interface::getSubnetMask() const
 {
     return subnetMask_;
 }
@@ -42,7 +42,7 @@ void N_Interface::setEnabled(bool enabled)
     enabled_ = enabled;
 }
 
-void N_Interface::setIpAddress(const std::string& ipAddress, const std::string& subnetMask)
+void N_Interface::setIpAddress(const string& ipAddress, const string& subnetMask)
 {
     ipAddress_ = ipAddress;
     subnetMask_ = subnetMask;

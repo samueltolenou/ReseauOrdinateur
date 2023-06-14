@@ -1,8 +1,9 @@
 #include "../header/Ordinateur.h"
 #include <iostream>
 
-using namespace std
-Ordinateur::Ordinateur(std::string nom, N_Interface interface, bool etat) :
+using namespace std;
+
+Ordinateur::Ordinateur(string nom, N_Interface interface, bool etat) :
         Equipement(nom, interface), etat(etat)
 {
 }
@@ -27,33 +28,33 @@ bool Ordinateur::getNEtat() const {
     return getInterface().getEtat();
 }
 
-void Ordinateur::setIPandMask(std::string adresse, std::string masque) {
+void Ordinateur::setIPandMask(string adresse, string masque) {
     getInterface().setAdresse(adresse);
     getInterface().setMasque(masque);
 }
 
-void Ordinateur::connect(std::string cle) {
+void Ordinateur::connect(string cle) {
     if (getEtat()) {
         if (!getInterface().getAdresse().empty() && !getInterface().getMasque().empty()) {
             // connect to network
             // add this computer to network's list of equipment
-            std::cout << "Successfully connected " << getNom() << " to network." << std::endl;
+            cout << "Successfully connected " << getNom() << " to network." << endl;
         } else {
-            std::cout << "Cannot connect " << getNom() << " to network because it has no IP address." << std::endl;
+            cout << "Cannot connect " << getNom() << " to network because it has no IP address." << endl;
         }
     } else {
-        std::cout << getNom() << " is turned off and cannot connect to the network." << std::endl;
+        cout << getNom() << " is turned off and cannot connect to the network." << endl;
     }
 }
 
 void Ordinateur::disconnect() {
     // remove this computer from network's list of equipment
-    std::cout << getNom() << " has been disconnected from the network." << std::endl;
+    cout << getNom() << " has been disconnected from the network." << endl;
 }
 
 bool Ordinateur::ping(const Equipement& equipement) const {
     // send a ping to the specified equipment
-    std::cout << "Pinging " << equipement.getNom() << " from " << getNom() << std::endl;
+    cout << "Pinging " << equipement.getNom() << " from " << getNom() << endl;
     return true; // dummy return value for now
 }
 

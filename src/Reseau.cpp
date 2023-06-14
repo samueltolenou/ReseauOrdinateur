@@ -3,10 +3,11 @@
 #include "Equipement.hpp"
 #include "Ordinateur.hpp"
 #include "APN.hpp"
+using namespace std;
 
 class Reseau {
 private:
-    std::vector<Equipement*> listeEquip;
+    vector<Equipement*> listeEquip;
 
 public:
     Reseau(APN* apn) {
@@ -19,9 +20,9 @@ public:
     }
 
     void afficheListe() {
-        std::cout << "Liste des équipements du réseau :" << std::endl;
+        cout << "Liste des équipements du réseau :" << endl;
         for (int i = 0; i < listeEquip.size(); i++) {
-            std::cout << "  - " << listeEquip[i]->getNom() << std::endl;
+            cout << "  - " << listeEquip[i]->getNom() << endl;
         }
     }
 };

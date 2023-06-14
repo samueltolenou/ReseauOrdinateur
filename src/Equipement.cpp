@@ -1,22 +1,23 @@
 #include "../header/Equipement.h"
 
 #include <iostream>
+using namespace std;
 
-Equipement::Equipement(const std::string& nom, const N_Interface& interface)
+Equipement::Equipement(const string& nom, const N_Interface& interface)
         : m_nom(nom), m_interface(interface) {}
 
 void Equipement::afficher() const {
-    std::cout << "Nom de l'equipement: " << m_nom << std::endl;
+    cout << "Nom de l'equipement: " << m_nom << endl;
     m_interface.afficher();
 }
 
-std::ostream& Equipement::afficher(std::ostream& sortie) const {
-    sortie << "Nom de l'equipement: " << m_nom << std::endl;
+ostream& Equipement::afficher(ostream& sortie) const {
+    sortie << "Nom de l'equipement: " << m_nom << endl;
     m_interface.afficher(sortie);
     return sortie;
 }
 
-std::ostream& operator<<(std::ostream& sortie, const Equipement& equipement) {
+ostream& operator<<(ostream& sortie, const Equipement& equipement) {
     equipement.afficher(sortie);
     return sortie;
 }

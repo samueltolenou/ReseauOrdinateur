@@ -4,17 +4,19 @@
 #include <string>
 #include "N_interface.h"
 
+using namespace std;
+
 class Equipement {
 public:
-    Equipement(const std::string& nom, const N_Interface& interface);
+    Equipement(const string& nom, const N_Interface& interface);
     void afficher() const;
-    std::ostream& afficher(std::ostream& sortie) const;
+    ostream& afficher(ostream& sortie) const;
 
 private:
-    std::string m_nom;
+    string m_nom;
     N_Interface m_interface;
 };
 
-std::ostream& operator<<(std::ostream& sortie, const Equipement& equipement);
+ostream& operator<<(ostream& sortie, const Equipement& equipement);
 
 #endif // EQUIPEMENT_H

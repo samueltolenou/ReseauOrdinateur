@@ -5,32 +5,33 @@
 
 #include <string>
 #include "Ordinateur.h"
+using namespace std;
 
 class APN : public Ordinateur {
 public:
-    APN(const std::string& nom, const N_interface& interface, const std::string& login, const std::string& password,
-        const std::string& niveau_securite = "aucune", const std::string& cle = "", bool dhcp = true);
+    APN(const string& nom, const N_Interface& interface, const string& login, const string& password,
+        const string& niveau_securite = "aucune", const string& cle = "", bool dhcp = true);
 
-    const std::string& getLogin() const;
-    const std::string& getPassword() const;
-    const std::string& getNiveauSecurite() const;
-    const std::string& getCle() const;
+    const string& getLogin() const;
+    const string& getPassword() const;
+    const string& getNiveauSecurite() const;
+    const string& getCle() const;
     bool getDhcp() const;
 
-    void setLogin(const std::string& login);
-    void setPassword(const std::string& password);
-    void setNiveauSecurite(const std::string& niveau_securite);
-    void setCle(const std::string& cle);
+    void setLogin(const string& login);
+    void setPassword(const string& password);
+    void setNiveauSecurite(const string& niveau_securite);
+    void setCle(const string& cle);
     void setDhcp(bool dhcp);
 
-    std::string getIP() const;
-    std::string getMask() const;
+    string getIP() const;
+    string getMask() const;
 
 private:
-    std::string login_;
-    std::string password_;
-    std::string niveau_securite_;
-    std::string cle_;
+    string login_;
+    string password_;
+    string niveau_securite_;
+    string cle_;
     bool dhcp_;
 };
 
