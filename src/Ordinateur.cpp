@@ -8,7 +8,7 @@ Ordinateur::Ordinateur(string nom, N_Interface interface, bool etat) :
 {
 }
 
-void Ordinateur::allumer() {
+/*void Ordinateur::allumer() {
     etat = true;
 }
 
@@ -101,5 +101,5 @@ void Ordinateur::connecterAPN(APN& apn, string login, string mdp) {
     apn.ajouterEquipement(*this);
 
 
-}
+}*/
 

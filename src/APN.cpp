@@ -48,9 +48,11 @@ void APN::setDhcp(bool dhcp) {
     dhcp_ = dhcp;
 }
 
-string APN::getIP() const {
-    // TODO: Implémenter l'attribution d'une adresse IP disponible sur le réseau
-    return "";
+string APN::getIP(){
+    if (nbr_ip <= 5)
+        return ip_available[nbr_ip++];
+    else
+        return "NO_IP_ADDRESS_AVAILABLE";
 }
 
 string APN::getMask() const {
